@@ -5,6 +5,12 @@
 # Description: Simple, single-file script grabs and collects water level data
 #              via the NOAA CO-OPS API into separate station-by-station CSV
 #              files.
+#
+#              By default, this will add a "Unix Time" column, translated from
+#              the "Date Time" column.
+#
+#              Settings must be edited in-file under the Configs section.
+#
 # Author:      dm.kishi@gmail.com
 # Created:     2016-09-25
 # Modified:    2016-10-10
@@ -25,15 +31,15 @@ ADD_UNIX_TIMESTAMP = true
 DATE_RANGE = { first: 20150701, last: 20160630 }
 
 STATIONS = {
-  alameda:       9414750,
-  bolinas:       9414958,
-  coyote_creek:  9414575,
-  martinez:      9415102,
-  point_reyes:   9415020,
-  port_chicago:  9415144,
-  redwood_city:  9414523,
-  richmond:      9414863,
-  sf:            9414290
+  alameda:      9414750,
+  bolinas:      9414958,
+  coyote_creek: 9414575,
+  martinez:     9415102,
+  point_reyes:  9415020,
+  port_chicago: 9415144,
+  redwood_city: 9414523,
+  richmond:     9414863,
+  sf:           9414290
 }
 
 # "MLLW" or "NAVD", uppercase
