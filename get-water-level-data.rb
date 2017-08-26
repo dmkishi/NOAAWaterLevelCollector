@@ -162,12 +162,14 @@ class NOAA_COOP_API
     res = Net::HTTP.get_response(@@uri)
 
     if !res.is_a?(Net::HTTPSuccess)
-      puts 'There was an HTTP error!'
-      puts "#{res.code} #{res.message}"
-      exit
+      if res.code != '301' || res.code != '302'
+        puts "HTTP ERROR: #{res.code} #{res.message}"
+        exit
+      end
+      puts 'WARNING: There was an HTTP redirect while connecting to the NOAA ' +
+           'CO-OPS API. The base URL may need to be updated.'
     elsif is_error_message(res.body)
-      puts 'There was an error!'
-      puts res.body
+      puts "ERROR: #{res.body}"
       exit
     end
 
