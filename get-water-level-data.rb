@@ -139,7 +139,7 @@ end
 
 
 class NOAA_COOP_API
-  @@uri = URI('http://tidesandcurrents.noaa.gov/api/datagetter')
+  @@uri = URI('https://tidesandcurrents.noaa.gov/api/datagetter')
 
   def initialize(station_id)
     @station_id = station_id
