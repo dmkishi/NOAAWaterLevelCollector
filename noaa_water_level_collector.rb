@@ -12,10 +12,12 @@
 #              multiple stations and collecting them into single station-by-
 #              station CSV files.
 #
-#              Optionally, the "Date Time" field can be converted to a proper
-#              ISO 8601 format, e.g. "2001-12-31T23:55:00+00:00", and a "Unix
-#              Time" column can be appended. Otherwise, the CSV output can be
-#              exactly as provided by the NOAA.
+#              Optionally, the "Date Time" field can be converted to an ISO 8601
+#              format, "2001-12-31T23:55:00" (without time offsets or the "Z"
+#              designator for the zero UTC offset are given even if GMT is
+#              selected as a time zone), and a "Unix Time" column can be
+#              appended. Otherwise, the CSV output are exactly as provided by
+#              the NOAA API.
 #
 #              See the "CONFIGS" area below for detailed configuration notes.
 #
@@ -95,8 +97,11 @@ UNITS = 'feet'
 TIME_ZONE = 'lst'
 
 
-# Correct the "Date Time" column to a proper ISO 8601 format? I.e. convert from
-# "2001-12-31 23:55" to "2001-12-31T23:55:00+00:00"?
+# Convert the "Date Time" column to an ISO 8601 format, from "2001-12-31 23:55"
+# to "2001-12-31T23:55:00"?
+#
+# N.B. No time offsets or the "Z" designator for the zero UTC offset are given
+#      even if GMT is selected as a time zone above.
 CONVERT_TO_ISO8601 = true
 
 
@@ -207,7 +212,7 @@ class NOAA_COOP_API
     if @convert_to_iso8601 || @add_unix_timestamp
       csv.each do |row|
         date_time = DateTime.parse(row['Date Time'])
-        row['Date Time'] = date_time.iso8601 if @convert_to_iso8601
+        row['Date Time'] = date_time.strftime('%FT%T') if @convert_to_iso8601
         row['Unix Time'] = date_time.to_time.to_i if @add_unix_timestamp
       end
     end
