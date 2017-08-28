@@ -3,7 +3,7 @@
 # Name:        noaa_water_level_collector.rb
 # Version:     v1.1.0
 # Description: Download 6-minute interval water level data across multiple
-#              stations via the NOAA CO-OPS API into seperate station-by-station
+#              stations via the NOAA CO-OPS API into separate station-by-station
 #              CSV files.
 #
 #              Retrieval of NOAA data products of 6-minute intervals are limited
