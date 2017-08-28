@@ -7,7 +7,7 @@
 #              CSV files.
 #
 #              Retrieval of NOAA data products of 6-minute intervals are limited
-#              to a range of 31 days. This script allows retrievals of arbituary
+#              to a range of 31 days. This script allows retrievals of arbitrary
 #              date ranges by automatically making multiple requests across
 #              multiple stations and collecting them into single station-by-
 #              station CSV files.
@@ -29,9 +29,8 @@
 #
 #
 #              TECHNICAL NOTES
-#              This is single-file Ruby script independent of external libraries,
-#              Ruby gems, or even a README file (its content should be self-
-#              descriptive.)
+#              This is single-file Ruby script independent of external libraries
+#              or Ruby gems.
 #
 #
 # Author:      DM Kishi <dm.kishi@gmail.com>
