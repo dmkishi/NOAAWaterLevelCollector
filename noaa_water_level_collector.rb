@@ -206,7 +206,10 @@ class NOAA_COOP_API
       exit
     end
 
-    csv = CSV.parse(res.body, headers: true)
+    # Additionally strips whitespace around header fields
+    csv = CSV.parse(res.body,
+                    headers: true,
+                    header_converters: lambda { |header, _| header.strip })
 
     if @convert_to_iso8601 || @add_unix_timestamp
       csv.each do |row|
