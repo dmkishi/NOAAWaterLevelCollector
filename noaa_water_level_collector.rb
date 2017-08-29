@@ -162,7 +162,7 @@ end
 ################################################################################
 class NOAA_COOP_API
   BASE_URL         = 'https://tidesandcurrents.noaa.gov/api/datagetter'
-  APPLICATION_NAME = 'NoaaWaterLevelCollector'
+  APPLICATION_NAME = 'NOAAWaterLevelCollector'
 
   def initialize(station_id:,
                  datum:              'MLLW',
