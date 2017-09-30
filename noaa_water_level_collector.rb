@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Name:        noaa_water_level_collector.rb
-# Version:     v1.1.0
+# Version:     v1.2.0
 # Description: Download 6-minute interval water level data across multiple
 #              stations via the NOAA CO-OPS API into separate station-by-station
 #              CSV files.
@@ -37,7 +37,7 @@
 # Author:      DM Kishi <dm.kishi@gmail.com>
 # Website:     https://github.com/dmkishi/NOAAWaterLevelCollector
 # Created:     2016-09-25
-# Modified:    2017-08-28
+# Modified:    2017-09-30
 
 
 
