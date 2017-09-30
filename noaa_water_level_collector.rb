@@ -268,7 +268,7 @@ module NoaaWaterLevelCollector
                         )
 
         # Create empty file (overwrite is fine)
-        filename = "#{station_name}--#{datum}--#{start_date}-#{end_date}.csv"
+        filename = "#{station_name}-#{station_id}-#{datum}--#{start_date}-#{end_date}.csv"
         puts "Preparing \"#{filename}\"..."
         File.open(filename, 'w') {}
 
